@@ -27,8 +27,6 @@ driver.find_element(By.XPATH, '//*[@id="responsive_page_template_content"]/div[1
 
 # to get past the verification you need to go to your mail and manually input the code
 # with some practice it should be easily accomplished in 15 seconds but you can add time if more is needed
-
-
 time.sleep(15)
 
 # go to inventar
@@ -37,14 +35,13 @@ driver.find_element(By.XPATH, '//*[@class="popup_menu_item"]').click()
 driver.find_element(By.XPATH, '//*[@id="responsive_page_template_content"]/div[1]/div[2]/div/div[1]/div[2]/div[3]/div[2]/a/span[1]').click()
 driver.find_element(By.XPATH, '//*[@id="inventory_link_753"]').click()
 time.sleep(2)
-# get the item, sell it if not possible go to next item in row .
 
 
-item_num = 3
+# get the item, sell it if not possible go to next item in row
+item_num = 1
 items_to_go = True
 while items_to_go:
     inventory_item = driver.find_element(By.XPATH, f'//*[@id="inventory_76561198064895481_753_0"]/div[1]/div[{item_num}]')
-    # item.click()
     inventory_item.click()
     time.sleep(2)
     try:
